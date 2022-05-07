@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <iomanip>
 #include <cmath>
 using namespace std;
@@ -80,7 +80,7 @@ public:
 		m2 = temp;
 	}
 	void check_zero(float& f) {
-		if (f<1e-6 && f>-(1e-6)) f = 0;
+		if (f<1e-5 && f>-(1e-5)) f = 0;
 	}
 	friend istream& operator>>(istream& is, Matrix& m) {
 		for (int i = 0; i < m.h; i++) {
@@ -101,7 +101,7 @@ public:
 	friend ostream& operator<<(ostream& os, Matrix& m) {
 		for (int i = 0; i < m.h; i++) {
 			for (int j = 0; j < m.w; j++) {
-				os << setw(7) << setprecision(3) << m.answer[i][j] << " ";
+				os << setw(7)<< setprecision(3) << m.answer[i][j] << " ";
 			}
 			os << "|";
 			for (int j = m.w; j < m.w * 2; j++) {
